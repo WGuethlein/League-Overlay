@@ -1,0 +1,74 @@
+{
+	"gameTime": "00:20",
+	"nextDrag": "Hextech",
+	"blueTeam": {
+		"teamGold": "2.5K",
+		"teamKills": 0,
+		"players": [
+			{
+				"name": "Caitlyn",
+				"displayName": "HELMKINATOR",
+				"isAlive": true,
+				"health": 580,
+				"maxHealth": 580,
+				"mana": 315,
+				"maxMana": 315,
+				"currentGold": 500,
+				"totalGold": 500,
+				"items": [
+					{
+						"canUse": false,
+						"consumable": false,
+						"count": 1,
+						"displayName": "Doran's Ring",
+						"itemID": 1056,
+						"price": 400,
+						"rawDescription": "GeneratedTip_Item_1056_Description",
+						"rawDisplayName": "Item_1056_Name",
+						"slot": 0
+					},
+					{}
+				],
+				"runes": {
+					"keystone": {
+						"displayName": "Press the Attack",
+						"id": 8005,
+						"rawDescription": "perk_tooltip_PressTheAttack",
+						"rawDisplayName": "perk_displayname_PressTheAttack"
+					},
+					"primaryRuneTree": {
+						"displayName": "Precision",
+						"id": 8000,
+						"rawDescription": "perkstyle_tooltip_7201",
+						"rawDisplayName": "perkstyle_displayname_7201"
+					},
+					"secondaryRuneTree": {
+						"displayName": "Resolve",
+						"id": 8400,
+						"rawDescription": "perkstyle_tooltip_7204",
+						"rawDisplayName": "perkstyle_displayname_7204"
+					}
+				},
+				"scores": {
+					"assists": 0,
+					"creepScore": 0,
+					"deaths": 0,
+					"kills": 0,
+					"wardScore": 0
+				},
+				"experience": 0,
+				"level": 1
+			},
+			{},
+			{},
+			{},
+			{}
+		]
+	},
+	"redTeam": {
+		"teamGold": "2.5K",
+		"teamKills": 0,
+		"players": []
+	},
+	"inhibs": []
+}
