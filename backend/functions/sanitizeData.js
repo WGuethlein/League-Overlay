@@ -59,16 +59,19 @@ module.exports = async (state, liveClientState) => {
 	}
 
 	// init team gold and team kill variables to 0
-	var blueTeamGold, redTeamGold, blueTeamKills, redTeamKills = 0;
+	var blueTeamGold=0
+	var redTeamGold = 0
+	var blueTeamKills = 0;
+	var redTeamKills = 0;
 
 	//calculate total team gold
-	for (let i = 0; i < 5; i++) {
+	for (let i = 0; i < 4; i++) {
 		blueTeamGold += blueTeamFarsight[i].totalGold;
 		redTeamGold += redTeamFarsight[i].totalGold;
 	}
 
 	//calculate team kills
-	for (let i = 0; i < 5; i++) {
+	for (let i = 0; i < 4; i++) {
 		blueTeamKills += blueTeamLiveClient[i].scores.kills;
 		redTeamKills += redTeamLiveClient[i].scores.kills;
 	}

@@ -20,7 +20,7 @@ var client = new net.Socket();
 //create a new socket.io ws, cors for dev
 const io = new Server(server, {
 	cors: {
-		origin: "*",
+		origin: "localhost:3000",
 	},
 });
 
@@ -89,6 +89,7 @@ const farsightInit = initFarsight();
 // if farsight is initialized correctly, start showing data
 if (farsightInit) {
 	app.get("/", async (req, res) => {
+		res.set('Access-Control-Allow-Origin', '*');
 		var liveClientState = await fetchWithRetry(liveClient_URL)
 			.catch(function (err) {
 				console.log(
@@ -102,7 +103,7 @@ if (farsightInit) {
 		const farsightState = getSnapshot();
 
 		let sanitizedState = await sendData(liveClientState, farsightState);
-
+		
 		res.json(sanitizedState);
 	});
 }
