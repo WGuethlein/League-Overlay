@@ -17,6 +17,8 @@ const server = http.createServer(app);
 let intervalConnect = false;
 var client = new net.Socket();
 
+const tempResp = require("./response.json")
+
 //create a new socket.io ws, cors for dev
 const io = new Server(server, {
 	cors: {
@@ -24,7 +26,7 @@ const io = new Server(server, {
 	},
 });
 
-const connect = () => {
+/*const connect = () => {
 	client.connect({
 		port: 34243,
 		host: "127.0.0.1",
@@ -39,7 +41,7 @@ const agent = new Agent({
 setGlobalDispatcher(agent);
 
 
-connect();
+connect();*/
 
 const launchIntervalConnect = () =>{
     if(intervalConnect) return
@@ -67,7 +69,7 @@ client.on("error", (err) => {
 client.on("close", launchIntervalConnect);
 client.on("end", launchIntervalConnect);
 
-io.on("connection", function (socket) {
+/*io.on("connection", function (socket) {
 	//live event tcp stream
 
 	console.log('here')
@@ -81,7 +83,7 @@ io.on("connection", function (socket) {
 		console.log(error);
 	});
 	return io;
-});
+});*/
 
 // warm farsight before starting, will only have half the required data without library connection
 const farsightInit = initFarsight();
@@ -104,7 +106,9 @@ if (farsightInit) {
 
 		let sanitizedState = await sendData(liveClientState, farsightState);
 		
-		res.json(sanitizedState);
+		//res.json(sanitizedState);
+
+		res.json(tempResp)
 	});
 }
 

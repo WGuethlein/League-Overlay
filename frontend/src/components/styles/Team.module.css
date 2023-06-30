@@ -1,0 +1,9 @@
+.team{
+    display: flex;
+    flex-direction: row;
+    width:480px;
+    height:70px;
+
+    justify-content: space-around;
+    align-items: center;
+}

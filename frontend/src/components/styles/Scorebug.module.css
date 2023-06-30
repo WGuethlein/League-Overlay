@@ -1,0 +1,15 @@
+.topRow{
+    display: flex;
+    flex-direction: row;
+    width:1000px;
+    height:70px;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: blue;
+}
+
+.teamRow{
+    display: flex;
+    flex-direction: row;
+}
