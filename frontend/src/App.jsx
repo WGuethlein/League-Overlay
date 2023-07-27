@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import ItemLevel from "./components/ItemLevel"
 import Scorebug from "./components/Scorebug"
@@ -26,14 +24,29 @@ function App() {
     }, 1000);
   }, [])
 
+  const testData = {
+    gameTime: "00:00",
+    blueTeam:{
+      teamGold: "10K",
+      teamKills: 12,
+      towerKills: 1,
+    },
+    redTeam:{
+      teamGold: '12k',
+      teamKills: 4,
+      towerKills: 0,
+    }
+  }
+
+
   return (
     <>
-      <Scorebug state={state}/>
+      <Scorebug state={testData}/>
+      <ItemLevel />
+      <Inhibitors />
     </>
   )
 }
 
 export default App
 
-//<ItemLevel state={state}/>
-//<Inhibitors state={state}/>

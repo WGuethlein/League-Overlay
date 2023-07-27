@@ -1,9 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap');
+
 .team{
     display: flex;
     flex-direction: row;
     width:480px;
     height:70px;
-
-    justify-content: space-around;
+    justify-content:space-between;
     align-items: center;
+}
+
+.name{
+    font-family: 'Climate Crisis', sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    margin-left: 10px;
+    margin-right: 10px;
 }

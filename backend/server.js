@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const farsight = require("./modules/native-farsight-module");
 const sanitizeData = require("./functions/sanitizeData.js");
+const sanitizeLiveEvent = require('./functions/sanitizeLiveEvent')
+
 
 // liveClient imports
 const liveClient_URL = "https://127.0.0.1:2999/liveclientdata/allgamedata";
@@ -20,13 +22,16 @@ var client = new net.Socket();
 const tempResp = require("./response.json")
 
 //create a new socket.io ws, cors for dev
+// MIGHT NOT NEED
 const io = new Server(server, {
 	cors: {
 		origin: "localhost:3000",
 	},
 });
 
-/*const connect = () => {
+
+//tcp stram for live events
+const connect = () => {
 	client.connect({
 		port: 34243,
 		host: "127.0.0.1",
@@ -40,8 +45,7 @@ const agent = new Agent({
 
 setGlobalDispatcher(agent);
 
-
-connect();*/
+connect();
 
 const launchIntervalConnect = () =>{
     if(intervalConnect) return
@@ -54,11 +58,17 @@ const clearIntervalConnect = () =>{
     intervalConnect = false;
 }
 
-//socket.io, liveEvent code
+const  liveEventObject = [];
+
+//liveEvent code
 client.on("connect", () => {
 	clearIntervalConnect(intervalConnect);
 	console.log("connected to server", "TCP");
 	client.write("CLIENT connected");
+
+	// create a semi-sanitized object for the liveEvents
+	// pass it the new data and the previous state
+	liveEventObject = sanitizeLiveEvent(d.toString(), liveEventObject)
 });
 
 client.on("error", (err) => {
@@ -69,21 +79,7 @@ client.on("error", (err) => {
 client.on("close", launchIntervalConnect);
 client.on("end", launchIntervalConnect);
 
-/*io.on("connection", function (socket) {
-	//live event tcp stream
 
-	console.log('here')
-	client.on("data", function (d) {
-		console.log('here')
-		console.log(d.toString())
-		socket.emit("live_event", d.toString());
-	});
-
-	client.on("error", (error) => {
-		console.log(error);
-	});
-	return io;
-});*/
 
 // warm farsight before starting, will only have half the required data without library connection
 const farsightInit = initFarsight();
@@ -104,11 +100,9 @@ if (farsightInit) {
 
 		const farsightState = getSnapshot();
 
-		let sanitizedState = await sendData(liveClientState, farsightState);
+		let sanitizedState = await sendData(liveClientState, farsightState, liveEventData);
 		
-		//res.json(sanitizedState);
-
-		res.json(tempResp)
+		res.json(sanitizedState);
 	});
 }
 
