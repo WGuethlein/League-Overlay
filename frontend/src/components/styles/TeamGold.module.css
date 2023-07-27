@@ -3,5 +3,19 @@
 .gold{
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
+    font-size: 36px;
+}
+
+.ico{
+    margin-left: 5px;
+    margin-right: 5px;
     font-size: 24px;
+}
+
+.blue{
+    color:#4b5be5;
+}
+
+.red{
+    color:#e54b4b;
 }

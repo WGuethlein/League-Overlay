@@ -4,15 +4,15 @@ const TeamGold = (props) =>{
     if(props.team =='blue'){
         return(
             <div className={styles.gold}>
-                <img alt="" ></img>
                 {props.gold}
+                <i className={`fa fa-gg-circle ${styles.blue} ${styles.ico}`}></i>
             </div>
         )
     } else{
         return(
             <div className={styles.gold}>
+                <i className={`fa fa-gg-circle ${styles.red} ${styles.ico}`}></i>
                 {props.gold}
-                <img alt=""></img>
             </div>
         )
     }

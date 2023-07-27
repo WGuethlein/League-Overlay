@@ -4,15 +4,15 @@ const TowerKills = (props) =>{
     if(props.team =='blue'){
         return(
             <div className={styles.kills}>
-                <img alt=""></img>
                 {props.towers}
+                <i className={`fas fa-chess-rook fa-xs ${styles.blue} ${styles.ico}`}></i>
             </div>
         )
     } else{
         return(
             <div className={styles.kills}>
+                <i className={`fas fa-chess-rook fa-xs ${styles.red} ${styles.ico}`}></i>
                 {props.towers}
-                <img alt=""></img>
             </div>
         )
     }

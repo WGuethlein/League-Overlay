@@ -4,10 +4,11 @@ import ItemLevel from "./components/ItemLevel"
 import Scorebug from "./components/Scorebug"
 import Inhibitors from "./components/Inhibitors"
 
+
 function App() {
   const [state, setState] = useState([]);
 
-  const makeAPICall = async () => {
+  /*const makeAPICall = async () => {
     try {
       const response = await fetch(import.meta.env.VITE_API_URL, {mode:'cors'});
       const data = await response.json();
@@ -16,13 +17,13 @@ function App() {
     catch (e) {
       console.log(e)
     }
-  }
+  }*/
 
-  useEffect(() => {
+  /*useEffect(() => {
     setInterval(() => {
       makeAPICall();
     }, 1000);
-  }, [])
+  }, [])*/
 
   const testData = {
     gameTime: "00:00",
@@ -33,7 +34,7 @@ function App() {
     },
     redTeam:{
       teamGold: '12k',
-      teamKills: 4,
+      teamKills: 10,
       towerKills: 0,
     }
   }

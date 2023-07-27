@@ -1,11 +1,11 @@
 .topRow{
     display: flex;
     flex-direction: row;
-    width:1000px;
-    height:70px;
+    width:1200px;
+    height:80px;
     justify-content: space-between;
     align-items: center;
-    background-image: url("../../../public/images/Scoreboard-BG.png");
+    background-image: url("../../../images/Scoreboard-BG.png");
 }
 
 .teamRow{
@@ -13,7 +13,14 @@
 }
 
 .Logo{
-    height:65px;
+    height:60px;
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.wrapper{
+    position: absolute;
+    top:0px;
+    left: 50%;
+    transform: translate(-50%, 0%);
 }
