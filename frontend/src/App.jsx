@@ -3,7 +3,8 @@ import './App.css'
 import ItemLevel from "./components/ItemLevel"
 import Scorebug from "./components/Scorebug"
 import Inhibitors from "./components/Inhibitors"
-
+import DragTimer from './components/DragTimer'
+import HerBaronTimer from './components/HerBaronTimer'
 
 function App() {
   const [state, setState] = useState([]);
@@ -28,14 +29,14 @@ function App() {
   const testData = {
     gameTime: "00:00",
     blueTeam:{
-      teamGold: "10K",
-      teamKills: 12,
-      towerKills: 1,
+      teamGold: "122.5k",
+      teamKills: 50,
+      towerKills: 11,
     },
     redTeam:{
-      teamGold: '12k',
-      teamKills: 10,
-      towerKills: 0,
+      teamGold: '122.5k',
+      teamKills: 50,
+      towerKills: 11,
     }
   }
 
@@ -43,6 +44,8 @@ function App() {
   return (
     <>
       <Scorebug state={testData}/>
+      <DragTimer/>
+      <HerBaronTimer/>
       <ItemLevel />
       <Inhibitors />
     </>

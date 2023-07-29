@@ -2,20 +2,30 @@
 
 .gold{
     font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-    font-size: 36px;
+    font-weight: 200;
+    font-size: 32px;
+    position: absolute;
 }
 
 .ico{
     margin-left: 5px;
     margin-right: 5px;
-    font-size: 24px;
+    font-size: 22px;
+    position: relative;
+    top: -2px;
 }
 
-.blue{
+.blueI{
     color:#4b5be5;
 }
 
-.red{
+.redI{
     color:#e54b4b;
+}
+
+.blue{
+    right:760px;
+}
+.red{
+    left:760px;
 }

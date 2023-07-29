@@ -9,18 +9,27 @@
 }
 
 .teamRow{
-    right:10px;    
+    right:10px;
+    flex: 0 0 500px;    
 }
 
 .Logo{
     height:60px;
-    margin-left: 10px;
-    margin-right: 10px;
+    flex: 0 0 100px;
 }
 
 .wrapper{
     position: absolute;
     top:0px;
     left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.bottomRow{
+    background-image: url('../../../public/images/Time-BG.png');
+    width:100px;
+    height:30px;
+    position: relative;
+    left:50%;
     transform: translate(-50%, 0%);
 }

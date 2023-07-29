@@ -3,16 +3,28 @@
 .team{
     display: flex;
     flex-direction: row;
-    width:480px;
-    height:70px;
-    justify-content:space-between;
+    width:550px;
+    height:80px;
     align-items: center;
+    gap: 0px;
+}
+
+.name.blue{
+    text-align: left;
+    left:10px;
+}
+
+.name.red{
+    text-align: right;
+    right:10px;
 }
 
 .name{
+    position: absolute;
     font-family: 'Climate Crisis', sans-serif;
     font-weight: 400;
     font-size: 46px;
-    margin-left: 10px;
-    margin-right: 10px;
+    flex: 0 0 200px;
+    overflow:auto;
 }
+

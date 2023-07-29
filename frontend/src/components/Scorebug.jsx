@@ -12,7 +12,7 @@ const Scorebug = (props) =>{
                     <img className={styles.Logo} src="../../images/onu_head_96x64.png" alt="Logo" srcSet="../../images/onu_head.png" />
                     <Team className={styles.teamRow} team='red' data={props.state.redTeam != undefined ? props.state.redTeam : 0} />
                 </div>
-                <div className='bottom-row'>
+                <div className={styles.bottomRow}>
                     <GameTime time={props.state.gameTime}/>
                 </div>
             </div>

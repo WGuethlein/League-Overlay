@@ -3,16 +3,23 @@
 .kills{
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
-    font-size: 40px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 0px;
+    font-size: 48px;
+    overflow: hidden;
+    position: absolute;
 }
 
 .img{
-    height:32px;
+    position: relative;
+    height:40px;
     margin-left: -5px;
     margin-right: -5px;
+    top:3px;
+}
+
+.blue{
+    right:650px;
+}
+
+.red{
+    left:650px;
 }
